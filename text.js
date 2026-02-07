@@ -4,8 +4,10 @@ const route = express()
 
 let arr = [];
 
-export const text = ('/text', (req, res) => {
+route.get('/text', (req, res) => {
     const data = req.param.text
     console.log(data)
 
-}) 
+})
+
+export default route;
