@@ -1,6 +1,6 @@
 import express from "express";
 import cors from 'cors'
-import route from './text.js'
+// import route from './text.js'
 const app = express()
 
 app.use(express.json())
@@ -14,10 +14,10 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-    res.send(`<h1>listening</h1>`)
+    const text = req.params.text
+    console.log(text)
 })
 
-app.use('/v1', route);
+// app.use('/v1', route);
 
 app.listen(3000, () => console.log("listening on port 3000"))
-
