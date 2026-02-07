@@ -14,10 +14,12 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-    const text = req.params.text
-    console.log(text)
+    res.send("server is listening")
 })
 
-// app.use('/v1', route);
+app.get("/text", (req, res) => {
+    const text = req.params.data;
+    console.log(data);
+})
 
 app.listen(3000, () => console.log("listening on port 3000"))
